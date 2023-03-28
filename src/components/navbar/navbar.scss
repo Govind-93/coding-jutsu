@@ -1,0 +1,269 @@
+
+.nav__bar{
+    height: calc(var(--header-height) + 1rem );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15) ;
+
+    .nav__left{
+
+        display: flex;
+        align-items: center;
+
+        .logo__container{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+    
+            img{
+                height: 20px;
+                // width: 220px;
+            }
+        }
+
+        
+    
+    }
+
+    
+
+
+    
+    .theme__btn{
+        cursor: pointer;
+    }
+
+    .nav__right{
+
+        display: flex;
+        align-items: center;
+
+        .nav__menu{
+
+            margin-right: 1rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+
+            .close__btn{
+                display: none;
+            }
+
+            .nav__links{
+                display: flex;
+                gap: 1.5rem;
+    
+                .nav__link{
+                    font-size: var(--normal-font-size);
+                    font-weight: var(--font-medium);
+                    color: var(--title-color);
+                    cursor: pointer;
+    
+                    .nav__icons{
+                        margin-right: 0.5rem;
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .active__link{
+                    color: var(--first-color);
+                 }
+    
+                .nav__link:hover{
+                    color:var(--first-color-alt);
+                }
+    
+            }
+
+            .theme{
+                display: flex;
+                user-select: none;
+                align-items: center;
+                font-size: var(--small-font-size);
+                color: var(--title-color);
+                padding: 0.5rem;
+                border-radius: 20px;
+                background-color: var(--input-color);
+                cursor: pointer;
+            }
+    
+            .theme:hover{
+                background-color: var(--body-color);
+            }
+    
+            .theme__btn{
+                font-size: 1.2rem;
+                margin-right: 0.5rem;
+                color: var(--first-color);
+                cursor: pointer;
+            }
+    
+    
+        
+            .user{
+                cursor: pointer;
+                .user__image{
+                 width: 42px;
+                 height: 42px;
+                 border-radius: 50%;
+                 justify-self: flex-end;
+                 border: 1px solid var(--first-color);
+                 object-fit: cover;
+                 box-shadow: 2px 3px 6px rgba(0,0,0,0.15) 
+                }
+                .user__name{
+                    display: none;
+                    font-size: var(--normal-font-size);
+                }
+            }
+        }
+
+    }
+
+    .menu__bar{
+        font-size: 1.875rem;
+        display: none;
+    }
+
+}
+
+
+
+
+@media screen and (max-width:878px){
+    .nav__bar{
+        padding: 1rem 1rem;
+        .nav__right{
+
+            .nav__menu{
+
+                margin: 0;
+                display: flex;
+                flex-direction:column-reverse;
+                align-items: center;
+                justify-content: flex-end;
+                height: 100%;
+                width: 220px;
+                background-color: var(--input-color);
+                position: fixed;
+                top: 0;
+                left: -220px;
+                z-index: 2;
+                // padding: 2rem 1rem;
+                overflow: hidden;
+                transition: 0.3s;
+
+                .close__btn{
+                    position: absolute;
+                    display: block !important;
+                    font-size: 1.5rem;
+                    top: 8px;
+                    right: 8px;
+                    cursor: pointer;
+                    color: var(--first-color);
+
+                }
+    
+                .nav__links{
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 1rem;
+
+                    .nav__link{
+                        .nav__icons{
+                            margin-right: 1.2rem;
+                        }
+                    }
+                    
+                }
+                .user{
+                    // align-self: flex-start;
+                    margin-top: 4rem;
+                    .user__image{
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                    .user__name{
+                        display: block;
+                        font-size: var(1.2rem);
+                        color: var(--title-color);
+                        font-weight: 550;
+                    }
+                }
+
+                .theme{
+                    display: none;
+                }
+
+                
+    
+            }
+
+            .show__nav-menu{
+                left: 0;
+            }
+    
+        }
+
+        .menu__bar{
+            display: inline-block;
+
+            .theme__btn{
+                margin-right: 1rem;
+                color: var(--first-color);
+            }
+
+            .toggle__btn{
+                cursor: pointer;
+            }
+            
+        }
+
+    }
+    
+    
+}
+
+@media screen and (max-width:400px){
+    .nav__bar{
+        .nav__left{
+            .logo__container{
+                img{
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:350px){
+    .nav__bar{
+        padding: 1rem 0.75rem;
+        .nav__left{
+            .logo__container{
+                img{
+                    // width: 170px;
+                    height: 18px;
+                }
+            }
+        }
+
+        .menu__bar{
+
+            font-size: 1.5rem;
+        
+            .theme__btn{
+                margin-right: 0.5rem;
+                color: var(--first-color);
+            }
+            
+        }
+
+
+    }
+}

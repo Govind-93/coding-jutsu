@@ -1,0 +1,140 @@
+.register__container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    
+
+}
+
+.register__card{
+
+    width: 80%;
+    padding: 1rem 1.5rem 1rem;
+
+    .image__container{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 250px;
+            height: 24px;
+            margin: 1rem 0 1.5rem;
+        }
+    }
+
+   
+   
+    h1{
+        font-size: var(--h2-font-size);
+    }
+   
+
+    .register__form{
+        margin-top: 1rem;
+        margin-bottom: 0.75rem;
+        
+
+    
+
+        .buttons{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .btn{
+                width: 100%;
+                margin-bottom: 1rem;
+                padding: 0.75rem;
+                border-radius: 0.5rem;
+                font-family: var(--body-font);
+                background-color: var(--first-color);
+                color: #fff;
+                font-size: var(--h3-font-size);
+                border:none;
+                outline: none;
+            }
+
+            .btn:hover{
+                background-color: var(--first-color-alt);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.15) ;
+                cursor: pointer;
+            }
+
+        }
+
+        
+
+        .partition{
+
+            margin-top: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .partition__line{
+                width: 40%;
+                height: 1px;
+                background-color: #8a8787;
+            }
+
+            span{
+                margin: 0 0.5rem;
+                font-size: var(--smaller-font-size);
+            }
+        }
+
+        .register__option{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: var(--smaller-font-size);
+            margin-top: 0.75rem;
+
+            .sign__in__link{
+                font-size: var(--normal-font-size);
+                color: var(--first-color);
+                margin-left: 0.5rem;
+                cursor: pointer;
+            }
+            .sign__in__link:hover{
+                color: var(--first-color-alt);
+                transform: scale(1.01);
+            }
+        }
+
+    }
+
+}
+
+
+
+@media screen and (max-width:350px){
+    .register__card{
+        width: 95% !important;
+    }
+}
+
+@media screen and (min-width:480px){
+    .register__card{
+        width: 60%;
+    }
+}
+
+@media screen and (min-width:768px){
+    .register__card{
+        width: 45%;
+    }
+}
+
+@media screen and (min-width:968px){
+    .register__card{
+        width: 28%;
+    }
+}
