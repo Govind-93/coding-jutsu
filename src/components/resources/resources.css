@@ -1,0 +1,38 @@
+.resources {
+}
+
+.search-bar {
+  position: relative;
+  width: 70%;
+  height: 2.5rem;
+  margin: 2rem auto;
+  display: block;
+  display: none;
+}
+
+.search-text {
+  width: 100%;
+  height: 100%;
+  font-size: var(--h2-font-size);
+  color: var(--input-color);
+  padding: 0.4rem 1.6rem;
+  border-radius: 10rem;
+  border: none;
+  box-shadow: 0 0 0.75rem -0.25rem var(--input-color-alt);
+  outline: none;
+  background-color: transparent;
+  backdrop-filter: invert(1) saturate(0);
+}
+
+.search-submit {
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  right: 0.35rem;
+  top: 0.35rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.1rem;
+  background-color: transparent;
+  filter: invert(var(--invert-flipped)) saturate(0.25) brightness(0.8);
+}
