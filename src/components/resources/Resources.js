@@ -3,6 +3,8 @@ import './resources.css'
 import searchIcon from '../../assets/search-icon.svg'
 import Adapter from './Adapter'
 
+import data from './data'
+
 function SearchBar() {
 
   const [searchText, setSearchText] = useState('')
@@ -45,48 +47,22 @@ function SearchBar() {
   );
 }
 
-function Category() {
-  return (<>Category</>)
-}
-
 function Resources() {
-
-  const categories = [
-    'Data Structures and Algorithms',
-    'Web Development',
-    'Android Development'
-  ];
 
   return (
     <div className='resources'>
+      
        <SearchBar />
-       <Adapter 
        
-         
-  data = {[
-    ['CSS Text Indent definitiones graeci a feugiat instructior amet in sale discere ceterosdefinitiones graeci a feugiat instructior amet in sale discere ceteros', 'doming et invenire luctus evertitur litora melius accusata sodales accusata persius reque cum mauris erroribus atomorum menandri eleifend graecis accumsan amet sadipscing vocent vitae mutat definitiones splendide ludus equidem laudem', '#A55'],
-    ['Templates in C++', '', '#5A5'],
-    ['map in Javascript', '', '#55A'],
-    ['Spread in JS', '', '#AA5'],
-    ['CSS Text Indent definitiones graeci a feugiat instructior amet in sale discere ceteros', '', '#A55'],
-    ['Templates in C++', '', '#5A5'],
-    ['map in Javascript', '', '#55A'],
-    ['Spread in JS', '', '#AA5'],
-    ['CSS Text Indent definitiones graeci a feugiat instructior amet in sale discere ceteros', '', '#A55'],
-    ['Templates in C++', '', '#5A5'],
-    ['map in Javascript', '', '#55A'],
-    ['Spread in JS', '', '#AA5'],
-  ]}
-  
-  heading = 'Heading'
-  
-  link = '_'
-  linkName = 'View All'
-
-       />
-       {/*<div className='resource-categories'>
-         <Category />
-       </div>*/}
+       {
+         data.map(x =>
+           <>
+             <br/><br/><br/>
+             <Adapter {...x} />
+           </>
+         )
+       }
+       
     </div>
   )
 }

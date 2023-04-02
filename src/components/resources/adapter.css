@@ -50,7 +50,7 @@ body.dark-theme {
 }
 
 .adapter-heading {
-  font-size: var(--h1-font-size);
+  font-size: var(--h2-font-size);
   line-height: var(--h1-font-size);
   float: left;
 }
@@ -130,10 +130,8 @@ body.dark-theme {
 .adapter-slide-2d {
   position: relative;
   border-radius: 0.2rem;
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-medium);
-  text-indent: 0.6rem;
   color: white;
+  text-indent: 0.6rem;
   scroll-snap-align: start;
   overflow: hidden;
 }
@@ -144,21 +142,19 @@ body.dark-theme {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  font-size: 1rem;
+  font-weight: var(--font-medium);
 }
 
 .adapter-slide-topic > div {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-weight: 600;
 }
 
 .adapter-slide-content {
-  
-}
-
-.adapter-slide-content > div {
   overflow: hidden;
-  font-size: var(--small-font-size);
-  font-weight: 300;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-light);
+  line-height: 1.2;
 }
