@@ -1,29 +1,27 @@
-import tiles1D from '../../assets/tiles-1d.svg'
-import tiles2D from '../../assets/tiles-2d.svg'
-import {useState, useEffect} from 'react'
+import {useState,useEffect} from 'react'
 import './adapter.css'
 
 function Adapter({
   heading, link, linkName, data, id
 }) {
   
-  const [mode,setMode] = useState(1);
+  const key = `resource-adapter-${id}`
+  
+  const [mode,setMode] = useState(1)
   
   const toggleMode = () => {
     setMode(prev => prev === 1 ? 2 : 1)
   }
   
   useEffect(()=>{
-    const data = localStorage.
-      getItem(`resource-adapter-${id}-mode`);
+    const data = localStorage.getItem(key)
     if (data) {
-      setMode(parseInt(data));
+      setMode(parseInt(data))
     }
   },[])
   
   useEffect(()=>{
-    localStorage.
-      setItem(`resource-adapter-${id}-mode`, mode);
+    localStorage.setItem(key,mode);
   },[mode])
   
   return (
@@ -41,9 +39,9 @@ function Adapter({
           className='adapter-mode'
           onClick={toggleMode}>
         
-          <img src={
-              mode === 1 ? tiles1D : tiles2D
-            } />
+          {
+            mode === 1 ? 'Card' : 'List'
+          }
         
         </button>
       
@@ -58,30 +56,28 @@ function Adapter({
       </div>
       
       <div className={
-        mode === 1 ? 'adapter-body-1d' : 'adapter-body-2d'
+        mode === 1 ? 'adapter-body-card' : 'adapter-body-list'
       }>
         {data.map(
           ([topic,content,background]) =>
           (<div
             className={
               mode === 1 ? 
-              'adapter-slide-1d' :
-              'adapter-slide-2d'
+              'adapter-slide-card' :
+              'adapter-slide-list'
             }
             style={{background: background}}>
 
 {/* ----------------------------------- */}
 
-<div>
   <div className='adapter-slide-topic'>
     <div>{topic}</div>
   </div>
-
+            
   <div className='adapter-slide-content'>
     <div>{content}</div>
   </div>
-</div>
-
+            
 {/* ----------------------------------- */}
 
           </div>)
@@ -92,3 +88,9 @@ function Adapter({
 }
 
 export default Adapter
+
+
+
+
+
+

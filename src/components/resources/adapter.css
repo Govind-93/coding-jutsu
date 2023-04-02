@@ -56,6 +56,10 @@ body.dark-theme {
 }
 
 .adapter-link {
+  margin-right: 1rem;
+}
+
+.adapter-link, .adapter-mode  {
   border: none;
   height: 100%;
   font-size: 1rem;
@@ -69,43 +73,22 @@ body.dark-theme {
   display: inline-block;
   vertical-align: top;
   float: right;
-  margin-right: 1rem;
 }
 
-.adapter-mode {
-  border: none;
-  background-color: transparent;
-  backdrop-filter:
-    invert(0.75) saturate(0) opacity(0.1);
-  border-radius: 1rem;
-  height: 100%;
-  aspect-ratio: 1;
-  display: inline-block;
-  vertical-align: top;
-  float: right;
-}
-
-.adapter-mode > img {
-  width: 100%;
-  height: 100%;
-  filter: invert(var(--invert))
-    saturate(0.25) brightness(0.6);
-}
-
-.adapter-body-1d {
+.adapter-body-card {
   padding: 0 var(--adapter-margin);
   display: grid;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-padding: var(--adapter-margin);
-  grid-auto-columns: calc(var(--dim) * 50);
+  grid-auto-columns: 100%;
   grid-auto-flow: column;
   grid-template-rows: 1fr;
   grid-gap: 1rem;
 }
 
-.adapter-slide-1d {
+.adapter-slide-card {
   color: white;
   border-radius: 0.5rem;
   font-size: var(--normal-font-size);
@@ -115,19 +98,19 @@ body.dark-theme {
   scroll-snap-align: start;
 }
 
-.adapter-body-2d {
+.adapter-body-list {
   padding: 0 var(--adapter-margin);
   display: grid;
   overflow-y: auto;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-auto-rows: 2rem;
   grid-auto-flow: row;
   grid-gap: 0.5rem;
 }
 
-.adapter-slide-2d {
+.adapter-slide-list {
   position: relative;
   border-radius: 0.2rem;
   color: white;

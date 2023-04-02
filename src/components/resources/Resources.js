@@ -52,6 +52,8 @@ function Resources() {
   return (
     <div className='resources'>
       
+       <h2>Hello, What are you looking for?</h2>
+       
        <SearchBar />
        
        {
