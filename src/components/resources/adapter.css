@@ -12,6 +12,7 @@ body.dark-theme {
 }
 
 .adapter {
+  position: relative;
   width: 100%;
   display: grid;
   grid-template-rows: var(--h1-font-size) calc(var(--dim) * 30);
@@ -24,11 +25,12 @@ body.dark-theme {
   content: '';
   width: 100%;
   height: 100%;
+  
   position: absolute;
   pointer-events: none;
   
   --fade: var(--adapter-margin);
-  --offset: calc(var(--fade) * 0.2);
+  --offset: calc(var(--fade) * 0.3);
   
   background: linear-gradient(90deg,
     
