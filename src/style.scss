@@ -19,7 +19,7 @@
    --input-color : hsl(var(--hue-color), 70%, 96%);
    --input-color-alt : hsl(var(--hue-color), 22%, 16%);
    --body-color : hsl(var(--hue-color), 60%, 99%);
-   --container-color : #FFF;
+   --container-color : hsl(var(--hue-color), 50%, 95%);
    --navbar-color : var(--body-color);
    
    /* === Shadow Colors === */

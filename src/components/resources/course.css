@@ -1,0 +1,85 @@
+body.dark-theme {
+}
+
+:root {
+  --logo-size: 4rem;
+}
+
+.course {
+  padding-inline: 1rem;
+}
+
+.module {}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header > div {
+  flex: 0 0 var(--logo-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--first-color);
+}
+
+.header > div > img {
+  width: calc(100% - 4px);
+  aspect-ratio: 1;
+  margin: 2px;
+  object-fit: cover;
+  background: var(--first-color);
+  object-position: center center;
+  border-radius: 50%;
+}
+
+.header > h2 {
+  flex: auto;
+}
+
+.lesson {
+  display: flex;
+}
+
+.lesson > div {
+  flex: 0 0 var(--logo-size);
+  position: relative;
+}
+
+.lesson > p {
+  background: var(--container-color);
+  background-image: linear-gradient(#0000, #0001);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+.line {
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  translate: -50%;
+  background: var(--container-color);
+  filter: invert(0.05) saturate(1.25);
+  position: absolute;
+}
+
+.dot {
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  filter: saturate(5) invert(0.1);
+  background: var(--container-color);
+  border-radius: 50%;
+  position: absolute;
+  translate: -50% -50%;
+}
+
+.padding {
+  width: var(--logo-size);
+  height: 1rem;
+  position: relative;
+}

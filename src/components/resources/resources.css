@@ -1,6 +1,9 @@
 .resources {
-  text-align: center;
   padding-block: 4rem 2rem;
+}
+
+.resources > h2 {
+  text-align: center;
 }
 
 .search-bar {
