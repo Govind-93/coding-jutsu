@@ -1,15 +1,24 @@
 body.dark-theme {
+  --color: white;
 }
 
 :root {
-  --logo-size: 4rem;
+  --logo-size: 3.5rem;
+  --color: black;
 }
 
 .course {
   padding-inline: 1rem;
 }
 
-.module {}
+.course-heading {
+  margin: 2rem 0 3rem 0.5rem;
+}
+
+.lessons {
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
 
 .header {
   display: flex;
@@ -41,6 +50,7 @@ body.dark-theme {
 
 .lesson {
   display: flex;
+  color: var(--color);
 }
 
 .lesson > div {
