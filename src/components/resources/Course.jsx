@@ -1,8 +1,12 @@
 import "./course.css";
 import code_logo from "./assets/code.png";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom'
 
 function Course() {
+  
+  const {modules, name} = useLocation().state
+  
   const Padding = () => {
     return (
       <div className="padding">
@@ -13,8 +17,8 @@ function Course() {
 
   return (
     <div className="course">
-      <h1 className="course-heading">Learn DSA</h1>
-      {data.map((x, i, a) => (
+      <h1 className="course-heading">{name}</h1>
+      {modules.map((x, i, a) => (
         <>
           {<Module {...x} moduleNumber={i} />}
           {i + 1 !== a.length && <Padding />}
@@ -24,18 +28,7 @@ function Course() {
   );
 }
 
-function Module({ lessons, moduleNumber }) {
-  
-  const id = `module${moduleNumber}`
-  
-  const [isOpen, setIsOpen] = useState(false);
-  const [style, setStyle] = useState({});
-
-  let handle = null
-
-  const toggle = () => {
-    setIsOpen((prev) => !prev);
-  };
+function Module({ name, lessons, moduleNumber }) {
   const heightOf = (e) => {
     if (typeof e === "string") {
       e = document.querySelector(e);
@@ -47,7 +40,16 @@ function Module({ lessons, moduleNumber }) {
     h += e.offsetHeight;
     return Math.ceil(h);
   };
-  
+
+  const id = `module${moduleNumber}`;
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [style, setStyle] = useState({});
+
+  const toggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   useEffect(() => {
     if (isOpen) {
       let h = 0;
@@ -83,47 +85,19 @@ function Module({ lessons, moduleNumber }) {
       </div>
     );
   };
-  console.log(style)
+
   return (
     <div id={id}>
       <a href="#">
-        <Header logo={code_logo} text={"Segment Tree"} />
+        <Header logo={code_logo} text={name} />
       </a>
       <div className="lessons" style={style}>
-          {lessons.map((x) => (
-            <Lesson text={x} />
-          ))}
-        </div>
+        {lessons.map((x) => (
+          <Lesson text={x} />
+        ))}
+      </div>
     </div>
   );
 }
 
 export default Course;
-
-const data = [
-  {
-    lessons: [
-      "invenireere porro",
-      "invenireanum aperiri an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-      "invenire imi an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-      "invenire tincidunt scripserit frinicus efficitur meliore unum aperiri an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-    ],
-  },
-  {
-    lessons: [
-      "invenireere porro",
-      "invenireanum aperiri an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-      "invenire imi an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-      "invenire tincidunt scripserit frinicus efficitur meliore unum aperiri an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-      "invenire imi an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-      "invenire tincidunt scripserit frinicus efficitur meliore unum aperiri an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-    ],
-  },
-  {
-    lessons: [
-      "invenireere porro",
-      "invenireanum aperiri an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-      "invenire imi an maiestatis vidisse et fabellas adipiscing ubique eloquentiam sanctus legere porro",
-    ],
-  },
-];

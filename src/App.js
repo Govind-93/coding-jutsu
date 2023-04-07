@@ -14,8 +14,6 @@ import Profile from './pages/profile/Profile'
 import Discuss from './components/discuss/Discuss';
 import Resources from './components/resources/Resources';
 
-
-
 const isCurrentUser = true;
 
 const Layout = () => {
@@ -59,7 +57,7 @@ const router = createBrowserRouter([
         element: <Discuss />
       },
       {
-        path: "/resources",
+        path: "/resources/*",
         element: <Resources />
       }
     ]

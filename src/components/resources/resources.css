@@ -22,7 +22,6 @@
   padding: 0.4rem 1.6rem;
   border-radius: 10rem;
   border: none;
-  box-shadow: 0 0 0.75rem -0.25rem var(--input-color-alt);
   outline: none;
   background-color: transparent;
   backdrop-filter: invert(1) saturate(0);

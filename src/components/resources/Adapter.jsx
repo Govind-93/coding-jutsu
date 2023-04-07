@@ -1,8 +1,9 @@
 import {useState,useEffect} from 'react'
 import './adapter.css'
+import { Link } from 'react-router-dom'
 
 function Adapter({
-  heading, link, linkName, data, id
+  name, link, linkName, data, id, modules
 }) {
   
   const key = `resource-adapter-${id}`
@@ -30,9 +31,9 @@ function Adapter({
       
       <div className='adapter-header'>
       
-        {heading &&
+        {name &&
           <h2 className='adapter-heading'>
-            {heading}
+            {name}
           </h2>}
       
         <button
@@ -46,12 +47,12 @@ function Adapter({
         </button>
       
         {link && 
-          <a href={link}>
+          <Link to={link} state={{name, modules}}>
             <button
               className='adapter-link'>
               {linkName || 'View All'}
             </button>
-          </a>}
+          </Link>}
       
       </div>
       

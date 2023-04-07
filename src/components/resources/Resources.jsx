@@ -1,77 +1,68 @@
-import {useState} from 'react'
-import './resources.css'
-import searchIcon from '../../assets/search-icon.svg'
-import Adapter from './Adapter'
-import Course from './Course'
+import { useState } from "react";
+import "./resources.css";
+import searchIcon from "../../assets/search-icon.svg";
+import Adapter from "./Adapter";
+import Course from "./Course";
+import { Routes, Route } from "react-router-dom";
 
-import data from './data'
+import data from "./data";
 
 function SearchBar() {
-
-  const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState("");
 
   const onSearchTextChange = (e) => {
-    setSearchText(e.target.value)
-  }
-  
-  
-  
+    setSearchText(e.target.value);
+  };
+
   const onSearchSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const s = searchText.trim().toLowerCase();
-    /*
-      // do something
-    */
-  }
+    
+  };
 
   return (
     <>
-      <form
-        className='search-bar'
-        onSubmit={onSearchSubmit} >
-        
+      <form className="search-bar" onSubmit={onSearchSubmit}>
         <input
-      className='search-text'
-          type='text'
-          placeholder='search here...'
+          className="search-text"
+          type="text"
+          placeholder="search here..."
           value={searchText}
-          onChange={onSearchTextChange} />
-          
-        <button
-          type='submit'
-          className='search-submit'>
-          
+          onChange={onSearchTextChange}
+        />
+
+        <button type="submit" className="search-submit">
           <img src={searchIcon} />
-        
         </button>
-        
       </form>
     </>
   );
 }
-  
+
 function Resources() {
+  const ResourcesLayout = () => (
+    <div className="resources">
+      <h2>Hello, What are you looking for?</h2>
 
-  return <Course />
+      <SearchBar />
 
-  /*return (
-    <div className='resources'>
-      
-       <h2>Hello, What are you looking for?</h2>
-       
-       <SearchBar />
-       
-       {
-         data.map(x =>
-           <>
-             <br/><br/><br/>
-             <Adapter {...x} />
-           </>
-         )
-       }
-       
+      {data.map((x) => (
+        <>
+          <br />
+          <br />
+          <br />
+          <Adapter {...x} />
+        </>
+      ))}
     </div>
-  )*/
+  );
+
+  return (
+    <Routes>
+      <Route path="/" element={ <ResourcesLayout /> } />
+      <Route path="/:courseName" element={ <Course /> } />
+    </Routes>
+  );
 }
 
-export default Resources
+export default Resources;

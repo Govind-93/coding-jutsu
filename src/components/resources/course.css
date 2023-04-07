@@ -7,8 +7,13 @@ body.dark-theme {
   --color: black;
 }
 
+* {
+  overflow-anchor: none;
+}
+
 .course {
   padding-inline: 1rem;
+  overflow: auto;
 }
 
 .course-heading {

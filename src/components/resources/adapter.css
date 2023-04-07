@@ -15,7 +15,7 @@ body.dark-theme {
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-rows: var(--h1-font-size) calc(var(--dim) * 30);
+  grid-template-rows: var(--h1-font-size) calc(var(--dim) * 50);
   grid-template-columns: 1fr;
   grid-gap: calc(var(--adapter-margin) * 0.6);
 }
