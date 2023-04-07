@@ -1,4 +1,3 @@
-
 const modules = [
   {
     name: "Arrays",
@@ -33,7 +32,7 @@ const data = [
   {
     id: 1,
     name: "Latest Articles",
-    link: "/resources/latest_articles",
+    link: "latest_articles",
     linkName: "",
     data: [
       [
@@ -103,7 +102,7 @@ const data = [
   {
     id: 2,
     name: "DSA",
-    link: "/resources/dsa",
+    link: "dsa",
     linkName: "",
     data: [
       [
@@ -173,7 +172,7 @@ const data = [
   {
     id: 3,
     name: "Web Development",
-    link: "/resources/web_development",
+    link: "web_development",
     linkName: "",
     data: [
       [
@@ -243,7 +242,7 @@ const data = [
   {
     id: 4,
     name: "Tutorials",
-    link: "/resources/tutorials",
+    link: "tutorials",
     linkName: "",
     data: [
       [

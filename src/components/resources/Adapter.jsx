@@ -1,97 +1,65 @@
-import {useState,useEffect} from 'react'
-import './adapter.css'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from "react";
+import "./adapter.css";
+import { Link } from "react-router-dom";
 
-function Adapter({
-  name, link, linkName, data, id, modules
-}) {
-  
-  const key = `resource-adapter-${id}`
-  
-  const [mode,setMode] = useState(1)
-  
+function Adapter({ name, link, linkName, data, id }) {
+  const key = `resource-adapter-${id}`;
+
+  const [mode, setMode] = useState(1);
+
   const toggleMode = () => {
-    setMode(prev => prev === 1 ? 2 : 1)
-  }
-  
-  useEffect(()=>{
-    const data = localStorage.getItem(key)
+    setMode((prev) => (prev === 1 ? 2 : 1));
+  };
+
+  useEffect(() => {
+    const data = localStorage.getItem(key);
     if (data) {
-      setMode(parseInt(data))
+      setMode(parseInt(data));
     }
-  },[])
-  
-  useEffect(()=>{
-    localStorage.setItem(key,mode);
-  },[mode])
-  
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(key, mode);
+  }, [mode]);
+
   return (
-  
-    <div className='adapter'>
-      
-      <div className='adapter-header'>
-      
-        {name &&
-          <h2 className='adapter-heading'>
-            {name}
-          </h2>}
-      
-        <button
-          className='adapter-mode'
-          onClick={toggleMode}>
-        
-          {
-            mode === 1 ? 'Card' : 'List'
-          }
-        
+    <div className="adapter">
+      <div className="adapter-header">
+        {name && <h2 className="adapter-heading">{name}</h2>}
+
+        <button className="adapter-mode" onClick={toggleMode}>
+          {mode === 1 ? "Card" : "List"}
         </button>
-      
-        {link && 
-          <Link to={link} state={{name, modules}}>
-            <button
-              className='adapter-link'>
-              {linkName || 'View All'}
-            </button>
-          </Link>}
-      
-      </div>
-      
-      <div className={
-        mode === 1 ? 'adapter-body-card' : 'adapter-body-list'
-      }>
-        {data.map(
-          ([topic,content,background]) =>
-          (<div
-            className={
-              mode === 1 ? 
-              'adapter-slide-card' :
-              'adapter-slide-list'
-            }
-            style={{background: background}}>
 
-{/* ----------------------------------- */}
-
-  <div className='adapter-slide-topic'>
-    <div>{topic}</div>
-  </div>
-            
-  <div className='adapter-slide-content'>
-    <div>{content}</div>
-  </div>
-            
-{/* ----------------------------------- */}
-
-          </div>)
+        {link && (
+          <Link to={`/resources/${link}`}>
+            <button className="adapter-link">{linkName || "View All"}</button>
+          </Link>
         )}
       </div>
+
+      <div className={mode === 1 ? "adapter-body-card" : "adapter-body-list"}>
+        {data.map(([topic, content, background]) => (
+          <div
+            className={mode === 1 ? "adapter-slide-card" : "adapter-slide-list"}
+            style={{ background: background }}
+          >
+            {/* ----------------------------------- */}
+
+            <div className="adapter-slide-topic">
+              <div>{topic}</div>
+            </div>
+
+            <div className="adapter-slide-content">
+              <div>{content}</div>
+            </div>
+
+            {/* ----------------------------------- */}
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Adapter
-
-
-
-
-
-
+export default Adapter;

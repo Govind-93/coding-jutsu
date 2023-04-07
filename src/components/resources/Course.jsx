@@ -1,12 +1,17 @@
 import "./course.css";
 import code_logo from "./assets/code.png";
 import { useState, useEffect } from "react";
-import { useLocation } from 'react-router-dom'
+import { useParams } from "react-router-dom";
+
+import data from "./data";
 
 function Course() {
-  
-  const {modules, name} = useLocation().state
-  
+  const { courseLink } = useParams();
+
+  const { name, modules } = data.find((x) => {
+    return x.link === courseLink;
+  });
+
   const Padding = () => {
     return (
       <div className="padding">
@@ -56,8 +61,8 @@ function Module({ name, lessons, moduleNumber }) {
       for (let x of document.querySelectorAll(`#${id} .lesson`)) {
         h += heightOf(x);
       }
-      h += "px";
-      setStyle({ height: h });
+      setStyle({ height: h + "px" });
+      document.querySelector(`#${id}`).scrollIntoView(false);
     } else {
       setStyle({ height: "0px" });
     }
@@ -88,7 +93,7 @@ function Module({ name, lessons, moduleNumber }) {
 
   return (
     <div id={id}>
-      <a href="#">
+      <a href="#" onClick={(e) => e.preventDefault()}>
         <Header logo={code_logo} text={name} />
       </a>
       <div className="lessons" style={style}>
