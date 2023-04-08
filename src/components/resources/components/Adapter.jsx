@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import "./adapter.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Adapter({ name, link, linkName, data, id }) {
   const key = `resource-adapter-${id}`;
-
   const [mode, setMode] = useState(1);
+  const navigate = useNavigate()
 
   const toggleMode = () => {
     setMode((prev) => (prev === 1 ? 2 : 1));
@@ -43,6 +43,7 @@ function Adapter({ name, link, linkName, data, id }) {
           <div
             className={mode === 1 ? "adapter-slide-card" : "adapter-slide-list"}
             style={{ background: background }}
+            onClick={() => navigate(`/resources/${link}/lesson`)}
           >
             {/* ----------------------------------- */}
 

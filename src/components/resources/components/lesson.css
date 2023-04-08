@@ -1,0 +1,52 @@
+:root {
+  --color: black;
+}
+body.dark-theme {
+  --color: white;
+}
+
+.lesson {
+  padding: 1rem 0.5rem;
+}
+
+.heading {
+  margin-inline: 1rem;
+  margin-bottom: 1rem;
+}
+
+.text, .note, .snippet {
+  font-size: var(--small-font-size);
+  background: var(--container-color);
+  background-image: linear-gradient(#0000, #0001);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  color: var(--color);
+}
+
+.text {
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  color: white;
+  background: transparent;
+}
+
+.note > p {
+  background: #973;
+  background-image: linear-gradient(#0000, #0001);
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.6rem;
+}
+
+.note > img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.snippet {
+}

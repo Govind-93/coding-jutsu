@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./resources.css";
 import searchIcon from "../../assets/search-icon.svg";
-import Adapter from "./Adapter";
-import Course from "./Course";
+import Adapter from "./components/Adapter";
+import Course from "./components/Course";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import data from "./data";
@@ -102,7 +102,7 @@ function Resources() {
   return (
     <Routes>
       <Route path="/" element={<ResourcesLayout />} />
-      <Route path="/:courseLink" element={<Course />} />
+      <Route path="/:courseLink/*" element={<Course />} />
     </Routes>
   );
 }
