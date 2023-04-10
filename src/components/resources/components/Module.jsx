@@ -2,8 +2,9 @@ import code_logo from "../assets/code.png";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+import {lesson_md} from "../data";
+
 function Module({ name, lessons, moduleNumber, courseLink }) {
-  
   const heightOf = (e) => {
     if (typeof e === "string") {
       e = document.querySelector(e);
@@ -57,7 +58,13 @@ function Module({ name, lessons, moduleNumber, courseLink }) {
               <div className="dot"></div>
             </div>
             {text && (
-              <p onClick={() => navigate(`/resources/${courseLink}/lesson`)}>
+              <p
+                onClick={() =>
+                  navigate(`/resources/${courseLink}/lesson`, {
+                    state: { name: "Welcome to C++", text: lesson_md },
+                  })
+                }
+              >
                 {text}
               </p>
             )}

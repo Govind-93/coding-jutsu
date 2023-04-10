@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "./adapter.css";
 import { Link, useNavigate } from "react-router-dom";
 
+import { lesson_md } from "../data";
+
 function Adapter({ name, link, linkName, data, id }) {
   const key = `resource-adapter-${id}`;
   const [mode, setMode] = useState(1);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const toggleMode = () => {
     setMode((prev) => (prev === 1 ? 2 : 1));
@@ -43,7 +45,11 @@ function Adapter({ name, link, linkName, data, id }) {
           <div
             className={mode === 1 ? "adapter-slide-card" : "adapter-slide-list"}
             style={{ background: background }}
-            onClick={() => navigate(`/resources/${link}/lesson`)}
+            onClick={() =>
+              navigate(`/resources/${link}/lesson`, {
+                state: { name: "Welcome to C++", text: lesson_md },
+              })
+            }
           >
             {/* ----------------------------------- */}
 

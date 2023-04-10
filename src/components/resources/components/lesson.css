@@ -1,8 +1,10 @@
 :root {
   --color: black;
+  --clip-color: #CCC;
 }
 body.dark-theme {
   --color: white;
+  --clip-color: #666;
 }
 
 .lesson {
@@ -14,39 +16,92 @@ body.dark-theme {
   margin-bottom: 1rem;
 }
 
-.text, .note, .snippet {
-  font-size: var(--small-font-size);
+.text {
+  font-size: var(--normal-font-size);
   background: var(--container-color);
-  background-image: linear-gradient(#0000, #0001);
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
   color: var(--color);
 }
 
-.text {
-}
-
 .note {
+  font-size: var(--normal-font-size);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0;
+  flex-direction: column;
+  gap: 0.2rem;
   color: white;
-  background: transparent;
 }
 
 .note > p {
   background: #973;
   background-image: linear-gradient(#0000, #0001);
   border-radius: 0.5rem;
-  padding: 0.2rem 0.6rem;
+  padding: 0.5rem 1rem;
 }
 
 .note > img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .snippet {
+  position: relative;
+}
+
+.lang {
+  top: 0.3rem;
+  right: 0.3rem;
+  border-radius: 1rem;
+  padding: 0 0.4rem;
+  font-size: var(--small-font-size);
+  color: white;
+  background: #28F;
+  position: absolute;
+}
+
+.clipboard {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: var(--clip-color);
+  border-radius: 0.4rem;
+  position: absolute;
+  bottom: 0.3rem;
+  right: 0.3rem;
+  padding: 0.1rem;
+}
+
+.copied {
+  font-size: var(--small-font-size);
+  bottom: 0.3rem;
+  opacity: 0;
+  position: absolute;
+}
+
+.copied-anim {
+  animation-name: anim;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+    right: 0.3rem;
+  }
+  10% {
+    opacity: 1;
+    right: 2rem;
+  }
+  90% {
+    opacity: 1;
+    right: 2rem;
+  }
+  100% {
+    opacity: 0;
+    right: 0.3rem;
+  }
 }

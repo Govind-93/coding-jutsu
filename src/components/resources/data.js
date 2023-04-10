@@ -1,3 +1,24 @@
+// Stub Lesson
+const lesson_md = `
+A C++ program is a collection of __commands or statements__.  
+  
+  
+Below is a simple program template.
+${"```"}c++
+#include <iostream>
+using namespace std;
+
+int main() {
+  return 0;
+}
+${"```"}
+You will learn what each of the statements does in the upcoming lessons.
+
+For now, remember that the entry point of every C++ program is the __main()__ function, irrespective of what the program does.
+${"```"}note
+__Curly brackets__ { } indicate the beginning and end of a function, which can also be called the __function's body__. The information inside the brackets indicates what the function does when executed.
+${"```"}
+`;
 
 const modules = [
   {
@@ -312,3 +333,4 @@ const data = [
 ];
 
 export default data;
+export { lesson_md };
