@@ -105,3 +105,22 @@ body.dark-theme {
     right: 0.3rem;
   }
 }
+
+.illustration {
+  position: relative;
+  top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.illustration-image {
+  object-position: center center;
+  border-radius: 0.5rem;
+}
+
+.illustration-caption {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold)
+}

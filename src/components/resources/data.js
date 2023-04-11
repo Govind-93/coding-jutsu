@@ -1,3 +1,5 @@
+import illustrable from "./assets/illustrable.gif";
+
 // Stub Lesson
 const lesson_md = `
 A C++ program is a collection of __commands or statements__.  
@@ -12,6 +14,7 @@ int main() {
   return 0;
 }
 ${"```"}
+![C++](${illustrable} "C++ Illustration")
 You will learn what each of the statements does in the upcoming lessons.
 
 For now, remember that the entry point of every C++ program is the __main()__ function, irrespective of what the program does.
@@ -20,7 +23,7 @@ __Curly brackets__ { } indicate the beginning and end of a function, which can a
 ${"```"}
 `;
 
-const modules = [
+const modules = [ 
   {
     name: "Arrays",
     lessons: [

@@ -78,35 +78,56 @@ const Snippet = ({ lang, code }) => {
   );
 };
 
-const prune = (s) => {
-  const arr = [];
+const filterText = (s) => {
+  s = s.replace(/!\[.*?\]\(.*?\)/g, (x) => {
+    let alt = x.match(/(?<=!\[).*?(?=\]\(.*?\))/g) || "";
+    let src = x.match(/(?<=!\[.*?\]\().*?(?=(\s*?(".*?"|'.*?'))?\))/g);
+    let title =
+      x.match(/(?<=!\[.*?\]\(.*?').*?(?='\))|(?<=!\[.*?\]\(.*?").*?(?="\))/g) ||
+      "";
 
-  let i = -1;
-
-  while (true) {
-    i = s.indexOf("```");
-    if (i === -1) {
-      break;
+    if (src) {
+      return `<figure class="illustration">
+        <img src="${src}" alt="${alt}" title="${title}" class="illustration-image" />
+        <figcaption class="illustration-caption">
+        ${title}
+        </figcaption>
+      </figure>`;
     }
-    const text = s.slice(0, i - 1).trim();
-    if (text) {
-      arr.push({ type: "text", content: text });
-    }
-    s = s.slice(i + 3, -1);
-    i = s.indexOf("\n");
-    const lang = s.slice(0, i);
-    const code = s.slice(i + 1, (i = s.indexOf("```")));
-    s = s.slice(i + 3, -1);
-    arr.push({ type: lang, content: code });
-  }
+    return "";
+  });
 
-  return arr;
+  const separate = (s) => {
+    const arr = [];
+
+    let i = -1;
+
+    while (true) {
+      i = s.indexOf("```");
+      if (i === -1) {
+        break;
+      }
+      const text = s.slice(0, i - 1).trim();
+      if (text) {
+        arr.push({ type: "text", content: text });
+      }
+      s = s.slice(i + 3, -1);
+      i = s.indexOf("\n");
+      const lang = s.slice(0, i);
+      const code = s.slice(i + 1, (i = s.indexOf("```")));
+      s = s.slice(i + 3, -1);
+      arr.push({ type: lang, content: code });
+    }
+
+    return arr;
+  };
+  return separate(s);
 };
 
 function Lesson() {
   const { state } = useLocation();
 
-  const arr = prune(state?.text);
+  const arr = filterText(state?.text);
 
   return (
     <div className="lesson">
