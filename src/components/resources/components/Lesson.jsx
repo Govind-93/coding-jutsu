@@ -78,7 +78,7 @@ const Snippet = ({ lang, code }) => {
   );
 };
 
-const filterText = (s) => {
+const filterText = (s) => {alert(s)
   s = s.replace(/!\[.*?\]\(.*?\)/g, (x) => {
     let alt = x.match(/(?<=!\[).*?(?=\]\(.*?\))/g) || "";
     let src = x.match(/(?<=!\[.*?\]\().*?(?=(\s*?(".*?"|'.*?'))?\))/g);
@@ -97,31 +97,28 @@ const filterText = (s) => {
     return "";
   });
 
-  const separate = (s) => {
-    const arr = [];
+  const arr = [];
 
-    let i = -1;
+  let i = -1;
 
-    while (true) {
-      i = s.indexOf("```");
-      if (i === -1) {
-        break;
-      }
-      const text = s.slice(0, i - 1).trim();
-      if (text) {
-        arr.push({ type: "text", content: text });
-      }
-      s = s.slice(i + 3, -1);
-      i = s.indexOf("\n");
-      const lang = s.slice(0, i);
-      const code = s.slice(i + 1, (i = s.indexOf("```")));
-      s = s.slice(i + 3, -1);
-      arr.push({ type: lang, content: code });
+  while (true) {
+    i = s.indexOf("```");
+    if (i === -1) {
+      break;
     }
+    const text = s.slice(0, i - 1).trim();
+    if (text) {
+      arr.push({ type: "text", content: text });
+    }
+    s = s.slice(i + 3, -1);
+    i = s.indexOf("\n");
+    const lang = s.slice(0, i);
+    const code = s.slice(i + 1, (i = s.indexOf("```")));
+    s = s.slice(i + 3, -1);
+    arr.push({ type: lang, content: code });
+  }
 
-    return arr;
-  };
-  return separate(s);
+  return arr;
 };
 
 function Lesson() {

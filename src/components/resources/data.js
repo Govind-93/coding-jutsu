@@ -1,9 +1,7 @@
 import illustrable from "./assets/illustrable.gif";
-
 // Stub Lesson
 const lesson_md = `
 A C++ program is a collection of __commands or statements__.  
-  
   
 Below is a simple program template.
 ${"```"}c++

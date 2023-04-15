@@ -1,0 +1,93 @@
+:root {
+  --color: black;
+}
+body.dark-theme {
+  --color: white;
+}
+
+.quiz-heading {
+  margin-top: 1rem;
+  margin-inline: 1rem;
+}
+
+.quiz-submit {
+  border: none;
+  font-weight: var(--font-semi-bold);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.2rem;
+  background-color: var(--first-color);
+  color: white;
+  margin-bottom: 2rem;
+  display: block;
+  margin-inline: auto;
+  font-size: var(--h3-font-size);
+}
+
+.quiz-submit.submitted {
+  background-color: #888;
+}
+
+.question {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  margin: 0.5rem 1rem;
+}
+
+.question-container {
+  font-size: var(--normal-font-size);
+  background: var(--container-color);
+  border-radius: 0.5rem;
+  color: var(--color);
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+.options {
+  backdrop-filter: invert(0.25) opacity(0.25) hue-rotate(60deg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.option > input {
+}
+
+.option > a:link,
+.option > a:visited,
+.option > a:hover,
+.option > a:active {
+  color: var(--color);
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--first-color);
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.2rem 0.6rem;
+}
+
+input[type="radio"]:checked + label.wrong.submitted {
+  background-color: #F22;
+}
+
+input[type="radio"]:checked + label.correct.submitted {
+  background-color: #2F2;
+  color: black;
+}
+
+input[type="radio"] {
+  accent-color: var(--first-color);
+}
+input[type="radio"].wrong.submitted {
+  accent-color: #F22;
+}
+input[type="radio"].correct.submitted {
+  accent-color: #2F2;
+}
