@@ -136,7 +136,7 @@ const Navbar = () => {
 
           <div className="user">
             <img src={Me} alt="user_img" className="user__image" />
-            <span className="user__name">Govind Sharma</span>
+            <span className="user__name">Sp Maurya</span>
           </div>
 
           <i className="uil uil-multiply close__btn" onClick={toggleNav}></i>
