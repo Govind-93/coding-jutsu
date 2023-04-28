@@ -17,7 +17,7 @@ function Discuss() {
       />
       <div className="queries">
         {queries.map((x) => (
-          <Query {...x} />
+          <Query {...x} description={null} />
         ))}
       </div>
     </div>
