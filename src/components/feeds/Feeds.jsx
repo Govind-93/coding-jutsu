@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './feeds.scss'
 import MyImage from '../../assets/me.jpeg'
 import Post from '../post/Post'
@@ -7,29 +7,37 @@ import {PostData} from './../../data'
 
 const Feeds = () => {
 
-  const [postsData,setpPostsData] = useState(PostData);
+  const [selectedImage, setSelectedImage] = useState();
+  const refPostContent = useRef('');
 
-  // const handleScroll = ()=>{
-  //   if (window.innerHeight + document.documentElement.scrollTop
-  //     === document.documentElement.offsetHeight){
-  //       console.log("Bottom is reached")
-  //       setpPostsData((data)=>{
-  //         return [...data,...PostData];
-  //       }) 
-  //     }
-     
-  // }
+  const handleSelectedImage = (e)=>{
+      setSelectedImage(e.target.files[0]);
+  }
 
-  // useEffect(()=>{
-  //   window.addEventListener('scroll',handleScroll);
-  //   return ()=>{
-  //     window.removeEventListener('scroll',handleScroll);
-  //   }
-  // })
+  const removeSelectedImage = ()=>{
+    setSelectedImage();
+  }
+
+  const uploadPost = ()=>{
+      const post = {
+        id:8,
+        user_name:"Govind Sharma",
+        user_profile: {MyImage},
+        post_desc : refPostContent.current.value,
+        post_img: URL.createObjectURL(selectedImage) ,
+        post_like : 0,
+        post_comments: []
+      }
+      console.log(post);
+      PostData.push(post);
+      setSelectedImage();
+      refPostContent.current.value='';
+  }
   
   return (
     <div className='feeds__container'>
       <div className="feeds">
+
         <div className="post__feed card">
           <div className="top">
             <div className="left">
@@ -42,28 +50,38 @@ const Feeds = () => {
           </div>
           <div className="mid">
           <div className="input__container text-area">
-              <textarea nam="" id="" cols="0" rows="1" className="contact__input post__data" placeholder='Share your achievement/experience'></textarea>
-            </div>
+              <textarea ref={refPostContent} nam="" id="" cols="0" rows="3" className="contact__input post__data" placeholder='Share your achievement/experience'></textarea>
+              <input id='upload-photo' type="file" onChange={handleSelectedImage} style={{display:"none"}}></input>
+              {
+                selectedImage && <div className="selected__image-container" onClick={removeSelectedImage} ><i class="uil uil-times remove__selected-image"></i><img className='selected__image' src={URL.createObjectURL(selectedImage)} alt="preview"  /> </div> 
+              }
+          </div>
+          
           </div>
           <div className="bottom">
             <div className="left">
-              <div className="button add__photo">
-                <i className="uil uil-camera-plus"></i> Add Photo
+             
+              <label htmlFor="upload-photo">
+              <div className="button add__photo"  >
+              <i className="uil uil-camera-plus"></i> Add Photo 
               </div>
+              </label>
+              <label htmlFor="upload-photo">
               <div className="button add__video">
-                <i className="uil uil-video"></i> Add Video
+               <i className="uil uil-video"></i> Add Video
               </div>
+              </label>
             </div>
             <div className="right">
-              <div className="button add__post">
-              {/* <i className="uil uil-plus"></i>Post */}Post
+              <div className="button add__post" onClick={uploadPost}>
+               Post
               </div>
             </div>
           </div>
         </div>
 
         {
-          postsData.map((post)=>{
+          PostData.map((post)=>{
             return <Post data={post}></Post>
           })
         }

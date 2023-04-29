@@ -40,13 +40,46 @@
             }
 
             .mid {
-                margin-top: 1rem;
+                margin-top: 0.5rem;
 
                 .input__container {
                     border-radius: 20px;
                     margin-bottom: 0.5rem;
                     .post__data {
                         font-size: var(--smaller-font-size);
+                    }
+                    .selected__image-container{
+                        max-height: 350px;
+                        width: 100%;
+                        margin-top: 0.5rem;
+                        border-radius: 8px;
+                        position: relative;
+
+                        .remove__selected-image{
+                            position: absolute;
+                            top: 8px;
+                            right: 8px;
+                            background-color: #fff;
+                            color: black;
+                            height: 24px;
+                            width: 24px;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                        }
+
+                        .remove__selected-image:hover{
+                            background-color: whitesmoke;
+                        }
+
+                        img{
+                            object-fit: cover;
+                            width: 100%;
+                            max-height: 350px;
+                            border-radius: 8px;
+                        }
                     }
                 }
 
@@ -105,6 +138,7 @@
             }
         }
 
+       
     }
 }
 
