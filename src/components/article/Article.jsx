@@ -14,7 +14,7 @@ const Text = ({ text }) => {
   return (
     <div className="text">
       <p>
-        <Markdown>{text.replaceAll("\n", "  \n")}</Markdown>
+        <Markdown>{text.replaceAll("\n", "  \n  ")}</Markdown>
       </p>
     </div>
   );
@@ -78,7 +78,7 @@ const Snippet = ({ lang, code }) => {
 };
 
 const filterText = (s) => {
-  s = s.trim();
+  s = s?.trim();
 
   if (!s) {
     return null;

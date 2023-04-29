@@ -41,14 +41,12 @@ function Adapter({ name, link, linkName, data, id }) {
       </div>
 
       <div className={mode === 1 ? "adapter-body-card" : "adapter-body-list"}>
-        {data.map(([topic, content, background]) => (
+        {data.map(([topic, content, background], i) => (
           <div
             className={mode === 1 ? "adapter-slide-card" : "adapter-slide-list"}
             style={{ background: background }}
             onClick={() =>
-              navigate(`/resources/${link}/lesson`, {
-                state: { name: "Welcome to C++", text: lesson_md },
-              })
+              navigate(`/resources/${link}/${i ? "sample" : "welcometocpp"}`)
             }
           >
             {/* ----------------------------------- */}

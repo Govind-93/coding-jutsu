@@ -1,6 +1,7 @@
 import "./resources.css";
 import Adapter from "./components/Adapter";
 import Course from "./components/Course";
+import Lesson from "./components/Lesson";
 import { Routes, Route } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
 import data from "./data";
@@ -31,6 +32,7 @@ function Resources() {
   return (
     <Routes>
       <Route path="/" element={<ResourcesLayout />} />
+      <Route path="/:lessonLink" element={<Lesson />} />
       <Route path="/:courseLink/*" element={<Course />} />
     </Routes>
   );
