@@ -8,16 +8,36 @@ import MyImage from '../../assets/me.jpeg'
 
 const Post = ({data}) => {
   let {user_name,post_like,post_desc,post_img,post_comments} = {...data};
-  
+  const [comment,setComment] = useState('');
   const [isLiked,setIsLiked] = useState(false);
   const [showComments,setShowComments] = useState(false);
 
   const handleLikeButton = ()=>{
       setIsLiked(!isLiked);
   }
+
   const handleCommentBtnClick = ()=>{
     setShowComments(!showComments);
   }
+
+  const postComment = (e)=>{
+      e.preventDefault();
+      if(comment.length <=0 ) {
+        alert("Please type something in comment before posting")
+        return ;
+      }
+     post_comments.push({
+      comment_id: new Date().getTime().toString(),
+      commented_by: "Govind Sharma",
+      comment_time: "now",
+      comment_desc: comment
+    })
+    console.log(post_comments)
+    setComment("");
+  }
+
+  
+
   return (
     <div className="post card">
           <div className="top">
@@ -62,9 +82,9 @@ const Post = ({data}) => {
             <div className="add__comment">
             <img src={MyImage} alt="user_image" />
             <div className="input__container">
-              <input className='inputs' type="text" placeholder='Add a comment...'/>
+              <input className='inputs' value={comment} onChange = {(e)=> setComment(e.target.value)}  type="text" placeholder='Add a comment...'/>
             </div>
-            <button className='send__comment__btn'><i class="uil uil-message"></i></button>
+            <button className='send__comment__btn' onClick={postComment} ><i className="uil uil-message"></i></button>
             </div>
 
             {
