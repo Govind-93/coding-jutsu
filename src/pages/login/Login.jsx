@@ -33,7 +33,7 @@ const Login = () => {
             </div>
 
             <div className="buttons">
-            <button className='btn text-center' type='submit'>Sign in</button>
+            <Link to={`/`}><button className='btn text-center' type='submit'> Sign in </button></Link>
             </div>
 
             <div className='forget__button'>

@@ -42,7 +42,7 @@ const Register = () => {
             </div>
 
             <div className="buttons">
-            <button className='btn text-center' type='submit'>Sign up</button>
+            <Link to={`/login`}> <button className='btn text-center' type='submit'>Sign up</button></Link>
             </div>
 
 
