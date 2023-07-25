@@ -7,7 +7,7 @@ function Discussion() {
   const { discussionLink: id } = useParams();
   const query = {
     ...queries.find((x) => {
-      return x.id == id;
+      return x.id === id;
     }),
   };
 
@@ -18,7 +18,7 @@ function Discussion() {
   return (
     <div className="discussion">
       <Query {...query} />
-      <h4 className="answer">Answers</h4>
+      <div className="answer">Answers</div>
       {responses ?
         responses.map((x) => (
           <Query

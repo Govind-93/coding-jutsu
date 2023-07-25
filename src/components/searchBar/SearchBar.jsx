@@ -1,7 +1,7 @@
 import "./searchBar.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import searchIcon from "./assets/search-icon.svg";
+
 
 function SearchBar({ items, getKey, path, placeholder }) {
   const [searchText, setSearchText] = useState("");
@@ -47,9 +47,10 @@ function SearchBar({ items, getKey, path, placeholder }) {
           onChange={onSearchTextChange}
         />
 
-        <button type="submit" className="search-submit">
-          <img src={searchIcon} />
-        </button>
+        
+        <i class="uil uil-search search-submit"></i>
+        
+
       </form>
       {searchResults.length > 0 && (
         <div className="search-list">
