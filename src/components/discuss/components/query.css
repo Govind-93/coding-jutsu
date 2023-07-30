@@ -13,7 +13,7 @@ body.dark-theme {
 
 .query {
   /* margin-inline: 1rem; */
-  width: 95%;
+  width: 100%;
   margin : 0 auto;
   padding: 0.2rem 0.6rem;
   backdrop-filter: invert(0.15) opacity(0.25) saturate(5);
@@ -91,17 +91,9 @@ body.dark-theme {
   gap: 0.3rem;
 }
 
-@media screen and (min-width:600px){
-  .query{
-    width:70%;
-  }
-}
 
-@media screen and (min-width:968px){
-  .query{
-    width:50%;
-  }
-}
+
+
 
 
 

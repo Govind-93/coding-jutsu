@@ -1,0 +1,54 @@
+.discussion__container {
+  display: flex;
+  justify-content: center;
+
+  .discussion{
+    width: 60%;
+  }
+  .questions{
+    margin: 1rem 0 0.5rem;
+  }
+  .answers{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.questions, .answer {
+  color: var(--title-color);
+}
+
+.no-answer {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media screen and (max-width:1200px){
+  .discussion__container{
+      .discussion{
+        width: 70%;
+      }
+  }
+}
+
+@media screen and (max-width:848px){
+  .discussion__container{
+      .discussion{
+        width: 80%;
+      }
+  }
+}
+
+@media screen and (max-width:648px){
+  .discussion__container{
+      .discussion{
+        width: 95%;
+      }
+  }
+}
