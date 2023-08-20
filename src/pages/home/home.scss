@@ -347,13 +347,7 @@
             }
         }
     }
-    .contact{
-        .contact-form__container{
-            .contact__form{
-                width: 90%;
-            }
-        }
-    }
+   
     .footer{
         .footer__container{
             flex-direction: column;
@@ -393,19 +387,6 @@
             }
         }
     }
-
-    .contact{
-        .contact-form__container{
-            .contact__form{
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-                .text-area{
-                    grid-area: 4/1/5/2;
-                }
-            }
-        }
-    }
-
 
 }
 

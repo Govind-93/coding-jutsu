@@ -7,56 +7,16 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 
 const Navbar = () => {
   const [showSideNav, setShowSideNav] = useState(false);
-  // const [theme,setTheme] = useState(localStorage.getItem('theme'));
   let location = useLocation();
 
   const { theme, switchTheme } = useContext(ThemeContext);
 
   console.log("Theme in navbar is ", theme);
 
-  // useEffect(()=>{
-
-  //   let curTheme = localStorage.getItem('theme');
-  //   if(curTheme){
-  //    if(curTheme==="Dark"){
-  //     document.body.classList.add('dark-theme');
-  //   }
-  //   else{
-  //     document.body.classList.remove('dark-theme');
-  //   }
-  //   }else{
-  //     localStorage.setItem('theme',"Light");
-  //     setTheme("Light");
-  //     document.body.classList.remove('dark-theme');
-  //   }
-  // },[])
-
   const toggleNav = () => {
     console.log("toggle clicked");
     setShowSideNav(!showSideNav);
   };
-
-  // const switchTheme = () => {
-
-  //   if(theme){
-  //     if(theme==="Light"){
-  //       localStorage.setItem('theme',"Dark");
-  //       document.body.classList.add('dark-theme');
-  //       setTheme("Dark");
-  //     }
-  //     else {
-  //       localStorage.setItem('theme',"Light");
-  //       document.body.classList.remove('dark-theme');
-  //       setTheme("Light");
-  //     }
-  //   }
-  //   else{
-  //     localStorage.setItem('theme',"Dark");
-  //     document.body.classList.add('dark-theme');
-  //     setTheme("Dark");
-  //   }
-
-  // }
 
   return (
     <div className="nav__bar">
@@ -67,7 +27,7 @@ const Navbar = () => {
       </div>
 
       <div className="nav__right">
-        <div className={`nav__menu${showSideNav ? " show__nav-menu" : ""}`}>
+        <div className={`nav__menu ${showSideNav ? "show__nav-menu" : ""}`}>
           <ul className="nav__links">
             <Link to="/">
               <li

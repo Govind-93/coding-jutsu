@@ -1,0 +1,56 @@
+.feature{
+    width: 380px;
+    border-radius: 8px;
+    height: 344px;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+    position: relative;
+
+    .upcoming__text{
+        position: absolute;
+        top:0;
+        right: 0;
+        padding: 0.5rem;
+        background-color: var(--first-color);
+        border-radius: 0 8px 0 8px;
+        font-size: var(--smaller-font-size);
+        color: white;
+    }
+
+    .feature__icon{
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        i{
+            color: #ffffff;
+        }
+
+    }
+
+    .feature__title{
+        margin-bottom: 1rem;
+    }
+
+    .feature__content{
+        width: 80%;
+        word-wrap: break-word;
+        hyphens: auto;
+        justify-content: center;
+        font-size: var(--normal-font-size);
+    }
+
+}
+
+.feature:hover{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+}
