@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { queries, discussion } from "../data";
 import Query from "./Query";
 
+// Test commit
+
 function Discussion() {
   const { discussionLink: id } = useParams();
   const query = {
