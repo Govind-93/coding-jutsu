@@ -18,3 +18,4 @@
 - Alignment of profile picture is not set with other items in navBar
 - Try to put consistency in components like buttons , input , containers (in terms of design , make them as component if necessary)
 - Button Component need to ve developed in order to maintain consistency 
+// Test 
