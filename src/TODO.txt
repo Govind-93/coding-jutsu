@@ -1,0 +1,21 @@
+- Decide the input color variable
+- Add the exports of each component in their respective folders  
+- Correct the register page ui 
+- AutoSearch component needs redesigning 
+- Post Feed card's input border radius needs to be changed
+- Replace the Icons in discuss components 
+- Add a bookmark feature in discuss section
+- In Discuss section need to add a good design for "No answers" content part 
+- Add Comment component instead of hardcoding it.
+- Create a persona component for showing users profile image (and name if required)
+- Keep the discus tab active when we are inside discussion query
+- Text is not selectable right now 
+- Reduce size of post doubt button for smaller devices 
+- Add a custom scroll bar wherever scrolling is required
+- Handle the typewriter issue for smaller devices, screen shifts when text is rendered in next line
+- Change the color of navbar for dark theme, can't differentiate 
+- Add support for uploading multiple images in post
+- Alignment of profile picture is not set with other items in navBar
+- Try to put consistency in components like buttons , input , containers (in terms of design , make them as component if necessary)
+- Button Component need to ve developed in order to maintain consistency 
+// test
