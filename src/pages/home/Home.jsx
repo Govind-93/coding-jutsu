@@ -15,24 +15,28 @@ const Home = () => {
           <div className="home__left">
             <div className="home__data">
               <h1 className="title">
-                Welcome to <span id="text__coding">Coding </span>
-                <span id="text__jutsu">
-                  <Typewriter
-                    className="Typewriter"
-                    options={{
-                      loop: true,
-                    }}
-                    onInit={(typewriter) => {
-                      typewriter
-                        .typeString("Jutsu")
-                        .pauseFor(1500)
-                        .deleteAll(100)
-                        .typeString("World")
-                        .pauseFor(2000)
-                        .start();
-                    }}
-                  />
-                </span>
+                Welcome to{" "}
+                <div>
+                  {" "}
+                  <span id="text__coding">Coding </span>
+                  <span id="text__jutsu">
+                    <Typewriter
+                      className="Typewriter"
+                      options={{
+                        loop: true,
+                      }}
+                      onInit={(typewriter) => {
+                        typewriter
+                          .typeString("Jutsu")
+                          .pauseFor(1500)
+                          .deleteAll(100)
+                          .typeString("World")
+                          .pauseFor(2000)
+                          .start();
+                      }}
+                    />
+                  </span>
+                </div>
               </h1>
               <h3 className="subtitle">Learn, help, share </h3>
               <p className="description">

@@ -22,7 +22,9 @@ const Layout = () => {
     <>
       <div>
         <Navbar></Navbar>
+        <div style = {{paddingTop:'64px'}}>
         <Outlet />
+        </div>
       </div>
     </>
   )
