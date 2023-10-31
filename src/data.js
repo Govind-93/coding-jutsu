@@ -132,3 +132,36 @@ export const PostData = [
         }],
     },
 ]
+
+export const features = [
+    {
+        title : "Feeds for you" ,
+        content: "Share your achievements, experiences with others and show your passion toward programming.",
+        icon : <i className="uil uil-postcard"></i> ,
+        isUpcoming : false
+    },
+    {
+        title : "Doubt Discussion" ,
+        content: "Have doubts, got stuck ? Don't worry, we have discussion section where you can post/solve the doubts.",
+        icon : <i className="uil uil-comments"></i>,
+        isUpcoming : false
+    },
+    {
+        title : "Curated Resources" ,
+        content: "Having right resources in hand can increase the learning pace of an individual, so we have curated resources for you.",
+        icon :  <i className="uil uil-books"></i>,
+        isUpcoming : false
+    },
+    {
+        title : "Quiz Battles" ,
+        content: "Sharpen your concepts by participating in one on one quiz battles and showcase your grasp on programming concepts.",
+        icon : <i className="uil uil-brackets-curly"></i>,
+        isUpcoming : true
+    },
+    {
+        title : "Hinglish Articles" ,
+        content: "There is no better way to learn the concepts in your own way. Articles will be in hinglish so that there is no language barrier anymore.",
+        icon :<i className="uil uil-window"></i>,
+        isUpcoming : true
+    }
+]

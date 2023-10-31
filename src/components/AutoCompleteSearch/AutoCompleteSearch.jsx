@@ -1,13 +1,10 @@
-// Note : This file requires changes according to the data passed to the component 
-
+// Note : This file requires changes according to the data passed to the component
 
 import React, { useState } from "react";
 import { IconSearch, IconX } from "@tabler/icons-react";
 import "./autoCompleteSearch.css";
 
 const AutoCompleteSearch = ({ items }) => {
-  console.log(items);
-
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -62,14 +59,14 @@ const AutoCompleteSearch = ({ items }) => {
 
       {searchResults.length > 0 && (
         <div className="search-list">
-          <hr className="divider-line"/>
+          <hr className="divider-line" />
           {searchResults.slice(0, 5).map((x, i, a) => (
             <div
               className="search-list-item"
               style={{
                 display: "flex",
                 justifyContent: "space-between",
-                marginBottom:"4px"
+                marginBottom: "4px",
               }}
               onClick={() => {
                 setSearchText(x.name);
