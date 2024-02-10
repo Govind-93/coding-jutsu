@@ -16,11 +16,11 @@ export const NavLinks = [{
     label : 'Resources',
     icon :<i className="uil uil-books nav__icons"></i>
 },
-{
-    path : '/contests',
-    label : 'Contests',
-    icon :  <i className="uil uil-trophy nav__icons"></i>
-}
+// {
+//     path : '/contests',
+//     label : 'Contests',
+//     icon :  <i className="uil uil-trophy nav__icons"></i>
+// }
 ]
 
 export const PostData = [
