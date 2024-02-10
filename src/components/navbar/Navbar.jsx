@@ -2,8 +2,11 @@ import React, { useContext, useState } from "react";
 import "./navbar.scss";
 import Logo from "../../assets/logo.png";
 import Me from "../../assets/me.jpeg";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import NavLink from "./NavLink";
+
+import { NavLinks } from "../../data";
 
 const Navbar = () => {
   const [showSideNav, setShowSideNav] = useState(false);
@@ -29,60 +32,16 @@ const Navbar = () => {
       <div className="nav__right">
         <div className={`nav__menu ${showSideNav ? "show__nav-menu" : ""}`}>
           <ul className="nav__links">
-            <Link to="/">
-              <li
-                className={`nav__link ${
-                  location.pathname === "/" ? "active__link" : ""
-                } `}
-              >
-                <i className="uil uil-estate nav__icons"></i>
-                Home
-              </li>
-            </Link>
-
-            <Link to="/feeds">
-              <li
-                className={`nav__link ${
-                  location.pathname === "/feeds" ? "active__link" : ""
-                } `}
-              >
-                <i className="uil uil-postcard nav__icons"></i>
-                Feeds
-              </li>
-            </Link>
-
-            <Link to="/discuss">
-              <li
-                className={`nav__link ${
-                  location.pathname === "/discuss" ? "active__link" : ""
-                } `}
-              >
-                <i className="uil uil-comments nav__icons"></i>
-                Discuss
-              </li>
-            </Link>
-
-            <Link to="/resources">
-              <li
-                className={`nav__link ${
-                  location.pathname === "/resources" ? "active__link" : ""
-                } `}
-              >
-                <i className="uil uil-books nav__icons"></i>
-                Resources
-              </li>
-            </Link>
-
-            <Link to="/contests">
-              <li
-                className={`nav__link ${
-                  location.pathname === "/contests" ? "active__link" : ""
-                } `}
-              >
-                <i className="uil uil-trophy nav__icons"></i>
-                Contests
-              </li>
-            </Link>
+            {NavLinks.map((navLink) => {
+              return (
+                <NavLink
+                  active={location.pathname === navLink.path}
+                  path={navLink.path}
+                  label={navLink.label}
+                  icon={navLink.icon}
+                />
+              );
+            })}
           </ul>
 
           <div className="theme" onClick={switchTheme}>

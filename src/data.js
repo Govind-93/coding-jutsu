@@ -1,3 +1,27 @@
+export const NavLinks = [{
+    path : '/',
+    label : 'Home',
+    icon : <i className="uil uil-estate nav__icons"></i>
+},{
+    path : '/feeds',
+    label : 'Feeds',
+    icon : <i className="uil uil-postcard nav__icons"></i>
+},
+{
+    path : '/discuss',
+    label : 'Discuss',
+    icon :<i className="uil uil-comments nav__icons"></i>
+},{
+    path : '/resources',
+    label : 'Resources',
+    icon :<i className="uil uil-books nav__icons"></i>
+},
+{
+    path : '/contests',
+    label : 'Contests',
+    icon :  <i className="uil uil-trophy nav__icons"></i>
+}
+]
 
 export const PostData = [
     {

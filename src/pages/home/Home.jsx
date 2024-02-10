@@ -15,9 +15,8 @@ const Home = () => {
           <div className="home__left">
             <div className="home__data">
               <h1 className="title">
-                Welcome to{" "}
+                Welcome to
                 <div>
-                  {" "}
                   <span id="text__coding">Coding </span>
                   <span id="text__jutsu">
                     <Typewriter
