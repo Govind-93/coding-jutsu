@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Article from "../../article/Article";
 import "./query.css";
 
-function Query({
+const Query = ({
   question,
   description,
   posterName,
@@ -17,7 +17,7 @@ function Query({
   datetime,
   tags,
   id,
-}) {
+}) => {
   const date = new Date(datetime);
 
   const month = [
@@ -49,13 +49,13 @@ function Query({
 
   const day = date.getDate();
   const daySuf = ((d) => {
-    if (d % 20 == 1) {
+    if (d % 20 === 1) {
       return "st";
     }
-    if (d % 20 == 2) {
+    if (d % 20 === 2) {
       return "nd";
     }
-    if (d % 20 == 3) {
+    if (d % 20 === 3) {
       return "rd";
     }
     return "th";
@@ -121,6 +121,6 @@ function Query({
       </div>
     </div>
   );
-}
+};
 
 export default Query;
